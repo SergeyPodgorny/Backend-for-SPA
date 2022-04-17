@@ -1,4 +1,4 @@
-package com.SPABackend.Entity;
+package com.SPABackend.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

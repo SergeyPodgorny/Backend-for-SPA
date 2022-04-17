@@ -1,4 +1,4 @@
-package com.SPABackend.Post.Service;
+package com.SPABackend.crud.service;
 
 
 public interface PostService {

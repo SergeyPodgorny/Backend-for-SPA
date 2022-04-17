@@ -1,20 +1,8 @@
-package com.SPABackend.Entity;
+package com.SPABackend.dto;
 
+import com.SPABackend.entity.User;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "users")
-public class User {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long userId;
+public class UserDTO {
 	
 	private String name;
 	
@@ -36,13 +24,13 @@ public class User {
 	
 	private String zipCode;
 	
-	@Column(name = "Location lattitude")
 	private String latitude;
 	
-	@Column(name = "Location longitude")
 	private String longitude;
 
-	public User(String name, String lastName, String userName, String email, String webSite, String phoneNumber,
+	
+
+	public UserDTO(String name, String lastName, String userName, String email, String webSite, String phoneNumber,
 			String street, String suite, String city, String zipCode, String latitude, String longitude) {
 		this.name = name;
 		this.lastName = lastName;
@@ -58,16 +46,23 @@ public class User {
 		this.longitude = longitude;
 	}
 
-	public User() {
+	public UserDTO(User user) {
+		name = user.getName();
+		lastName = user.getLastName();
+		userName = user.getUserName();
+		email = user.getEmail();
+		webSite = user.getWebSite();
+		phoneNumber = user.getPhoneNumber();
+		street = user.getStreet();
+		suite = user.getSuite();
+		city = user.getCity();
+		zipCode = user.getZipCode();
+		latitude = user.getLatitude();
+		longitude = user.getLongitude();
+	}
 	
-	}
-
-	public Long getId() {
-		return userId;
-	}
-
-	public void setId(Long id) {
-		this.userId = id;
+	public UserDTO() {
+		
 	}
 
 	public String getName() {
@@ -165,11 +160,6 @@ public class User {
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	
-	
-	
-
-	
 	
 	
 	
